@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Propublikasi - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="/src/css/style.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-montserrat font-medium" x-data="{dropDownOpen: false, scrolledFromTop: false}" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+
+    <!-- Header  -->
+    <header class="fixed w-full flex justify-between items-center z-10 px-4 md:px-12 h-20 bg-white transition-all duration-500" :class="{'h-20': !scrolledFromTop, 'h-16 shadow-sm': scrolledFromTop}">
+        <a href="index.html">
+            <span class="font-poppins text-lg transform origin-left transition duration-500" :class="{'scale-100': !scrolledFromTop, 'scale-75': scrolledFromTop}">AP Propublikasi</span>
+        </a>
+
+        <div class="flex justify-center items-center gap-3">
+            <span>John Doe</span>
+            <div class="relative">
+                <button @click="dropDownOpen = !dropDownOpen" class="block h-9 w-9 rounded-full overflow-hidden border-[1px] border-red-200 shadow-sm"><img class="h-full w-full object-cover" src="https://source.unsplash.com/600x400?man" alt="user image" /></button>
+
+                <!-- Dropdown menu -->
+                <div class="absolute right-0 top-full z-10 w-44 py-2" :class="{'hidden': !dropDownOpen, 'visible': dropDownOpen}">
+                    <div class="bg-white rounded divide-y divide-gray-100 shadow">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li>
+                                <a href="profile.html" class="block py-2 px-4 hover:bg-gray-100">Profile</a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gray-100">
+        <div class="container h-screen lg:w-full py-20 lg:relative lg:h-[28rem] lg:mb-40">
+            <div class="lg:absolute right-0 top-50 lg:w-full px-10 mt-20 flex justify-center">
+                <div class="w-full flex flex-col font-poppins justify-center rounded-md shadow-md p-4 md:p-8 lg:w-2/3 bg-white">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-2xl mb-4">Profil Anda</h3>
+                        <a href="dashboard.html" class="text-blue-500">Kembali ke Dashboard</a>
+                    </div>
+
+                    <div class="mx-auto mb-6">
+                        <div class="block h-36 w-36 shadow-md rounded-full overflow-hidden border-[1px] border-red-200">
+                            <img class="h-full w-full object-cover" src="https://source.unsplash.com/600x400?man" alt="user image" />
+                        </div>
+                    </div>
+                    <label class="text-gray-500" for="email"> Nama Depan</label>
+                    <input class="h-10 p-4 mb-4 bg-gray-100 rounded-md border-0 focus:outline-none" type="text" id="email" required>
+                    <label class="text-gray-500" for="email"> Nama Belakang</label>
+                    <input class="h-10 p-4 mb-4 bg-gray-100 rounded-md border-0 focus:outline-none" type="text" id="email" required>
+                    <label class="text-gray-500" for="email"> Email address</label>
+                    <input class="h-10 p-4 mb-4 bg-gray-100 rounded-md border-0 focus:outline-none" type="text" id="email" required>
+                    <div class="grid lg:grid-cols-3 xl:gap-6">
+                        <div class="relative z-0 mb-4 w-full group lg:col-span-2">
+                            <label class="text-gray-500" for="title">Alamat</label>
+                            <input type="text" name="floating_first_name" id="floating_first_name" class="block form-input w-full h-10" placeholder=" " required />
+                        </div>
+                        <div class="relative z-0 mb-4 w-full group">
+                            <label class="text-gray-500" for="title">Nomor</label>
+                            <input type="text" name="floating_first_name" id="floating_first_name" class="block form-input w-full h-10" placeholder=" " required />
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-3 xl:gap-6">
+                        <div class="relative z-0 mb-4 w-full group lg:col-span-2">
+                            <label class="text-gray-500" for="title">Kota</label>
+                            <input type="text" name="floating_first_name" id="floating_first_name" class="block form-input w-full h-10" placeholder=" " required />
+                        </div>
+                        <div class="relative z-0 mb-4 w-full group">
+                            <label class="text-gray-500" for="title">Kode Pos</label>
+                            <input type="text" name="floating_first_name" id="floating_first_name" class="block form-input w-full h-10" placeholder=" " required />
+                        </div>
+                    </div>
+                    <label class="text-gray-500" for="email">Negara</label>
+                    <input class="h-10 p-4 mb-4 bg-gray-100 rounded-md border-0 focus:outline-none" type="text" id="email" required>
+                    <label class="text-gray-500" for="email">Nomor Handphone</label>
+                    <input class="h-10 p-4 mb-4 bg-gray-100 rounded-md border-0 focus:outline-none" type="text" id="email" required>
+                    <label class="text-gray-500" for="email">Ganti Foto Profil</label>
+                    <input class="mb-6 block w-full text-sm rounded-md bg-gray-100" id="user_avatar" type="file">
+                    <button class="btn-blue mb-4">Update</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/mixitup.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

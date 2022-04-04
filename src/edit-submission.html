@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Propublikasi - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="/src/css/style.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-montserrat font-medium" x-data="{dropDownOpen: false, scrolledFromTop: false}" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+
+    <!-- Header  -->
+    <header class="fixed w-full flex justify-between items-center z-10 px-4 md:px-12 h-20 bg-white transition-all duration-500" :class="{'h-20': !scrolledFromTop, 'h-16 shadow-sm': scrolledFromTop}">
+        <a href="index.html">
+            <span class="font-poppins text-lg transform origin-left transition duration-500" :class="{'scale-100': !scrolledFromTop, 'scale-75': scrolledFromTop}">AP Propublikasi</span>
+        </a>
+
+        <div class="flex justify-center items-center gap-3">
+            <span>John Doe</span>
+            <div class="relative">
+                <button @click="dropDownOpen = !dropDownOpen" class="block h-9 w-9 rounded-full overflow-hidden border-[1px] border-red-200 shadow-sm"><img class="h-full w-full object-cover" src="https://source.unsplash.com/600x400?man" alt="user image" /></button>
+
+                <!-- Dropdown menu -->
+                <div class="absolute right-0 top-full z-10 w-44 py-2" :class="{'hidden': !dropDownOpen, 'visible': dropDownOpen}">
+                    <div class="bg-white rounded divide-y divide-gray-100 shadow">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li>
+                                <a href="profile.html" class="block py-2 px-4 hover:bg-gray-100">Profile</a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gray-100">
+        <div class="container h-screen lg:w-full py-20 lg:relative lg:h-[28rem] lg:mb-40">
+            <div class="lg:absolute right-0 top-50 lg:w-full mt-20 pb-20 flex justify-center">
+                <div class="flex flex-col justify-center w-full bg-white font-poppins shadow-md rounded-md p-4 md:p-8 md:w-2/3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-2xl mb-4">Edit Submission</h3>
+                        <a href="dashboard.html" class="text-blue-500">Kembali ke Dashboard</a>
+                    </div>
+                    <label class="text-gray-500" for="title">Judul</label>
+                    <input class="form-input h-10" type="text" id="title" required>
+                    <label class="text-gray-500" for="author">Penulis</label>
+                    <input class="form-input h-10" type="text" id="author" required>
+                    <button class="text-blue-400 text-xs text-right -mt-3 mb-4 hover:underline">Tambah Penulis</button>
+                    <label class="text-gray-500" for="summary">Ringkasan Naskah</label>
+                    <textarea class="form-input h-auto" rows="5" id="summary" required></textarea>
+                    <label class="text-gray-500" for="abstract">Abstrack</label>
+                    <textarea class="form-input h-auto" rows="5" id="abstract" required></textarea>
+                    <label class="text-gray-500" for="category">Kategori</label>
+                    <div class="relative text-xs mb-4">
+                        <select class="p-3 bg-gray-100 border-0 rounded-md focus:outline-none appearance-none w-full" id="category" required>
+                          <option>Computer Science</option>
+                          <option>Other category</option>
+                          <option>Other category</option>
+                        </select>
+                    </div>
+                    <label class="text-gray-500" for="keyword">Kata Kunci</label>
+                    <input class="form-input h-10" type="text" id="keyword" required>
+                    <label class="text-gray-500" for="services">Pilih Layanan</label>
+                    <fieldset>
+                        <div class="flex items-center mb-4">
+                            <input id="checkbox-1" aria-describedby="checkbox-1" type="checkbox" class="form-checkbox" checked>
+                            <label for="checkbox-1" class="ml-3 text-sm font-medium text-gray-900">Asistensi Publikasi</label>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input id="checkbox-2" aria-describedby="checkbox-2" type="checkbox" class="form-checkbox">
+                            <label for="checkbox-2" class="ml-3 text-sm font-medium text-gray-900">Making Cover</label>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input id="checkbox-2" aria-describedby="checkbox-2" type="checkbox" class="form-checkbox">
+                            <label for="checkbox-2" class="ml-3 text-sm font-medium text-gray-900">Layouting</label>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input id="checkbox-2" aria-describedby="checkbox-2" type="checkbox" class="form-checkbox">
+                            <label for="checkbox-2" class="ml-3 text-sm font-medium text-gray-900">Proofread</label>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input id="checkbox-2" aria-describedby="checkbox-2" type="checkbox" class="form-checkbox">
+                            <label for="checkbox-2" class="ml-3 text-sm font-medium text-gray-900">Translate</label>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input id="checkbox-2" aria-describedby="checkbox-2" type="checkbox" class="form-checkbox">
+                            <label for="checkbox-2" class="ml-3 text-sm font-medium text-gray-900">Hak Cipta</label>
+                        </div>
+                    </fieldset>
+                    <a href="checkout.html" class="btn-blue mb-4 text-center">Submit Sekarang</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="./js/mixitup.min.js "></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js "></script>
+    <script src="./js/main.js "></script>
+</body>
+
+</html>

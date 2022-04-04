@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Propublikasi - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/src/css/style.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-montserrat font-medium" x-data="{dropDownOpen: false, scrolledFromTop: false}" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+
+    <!-- Header  -->
+    <header class="fixed w-full flex justify-between items-center z-10 px-4 md:px-12 h-20 bg-white transition-all duration-500" :class="{'h-20': !scrolledFromTop, 'h-16 shadow-sm': scrolledFromTop}">
+        <a href="index.html">
+            <span class="font-poppins text-lg transform origin-left transition duration-500" :class="{'scale-100': !scrolledFromTop, 'scale-75': scrolledFromTop}">AP Propublikasi</span>
+        </a>
+
+        <div class="flex justify-center items-center gap-3">
+            <span>John Doe</span>
+            <div class="relative">
+                <button @click="dropDownOpen = !dropDownOpen" class="block h-9 w-9 rounded-full overflow-hidden border-[1px] border-red-200 shadow-sm"><img class="h-full w-full object-cover" src="https://source.unsplash.com/600x400?man" alt="user image" /></button>
+
+                <!-- Dropdown menu -->
+                <div class="absolute right-0 top-full z-10 w-44 py-2" :class="{'hidden': !dropDownOpen, 'visible': dropDownOpen}">
+                    <div class="bg-white rounded divide-y divide-gray-100 shadow">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li>
+                                <a href="profile.html" class="block py-2 px-4 hover:bg-gray-100">Profile</a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gray-100 ">
+        <div class="container h-screen lg:w-full py-20 lg:relative lg:h-[28rem] lg:mb-40 ">
+            <div class="flex justify-between py-10 ">
+                <a href="submit.html" class="btn-blue text-sm ">Submit Data</a>
+                <a href="transaction-history.html" class="btn-blue-o text-sm ">Riwayat Transaksi</a>
+            </div>
+
+            <div class="relative overflow-x-auto font-poppins shadow-md sm:rounded-lg ">
+                <table class="w-full text-sm text-left text-gray-200 ">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                        <tr>
+                            <th scope="col " class="px-6 py-4 ">
+                                No.
+                            </th>
+                            <th scope="col " class="px-6 py-4 ">
+                                Judul
+                            </th>
+                            <th scope="col " class="px-6 py-4 ">
+                                Aksi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b ">
+                            <th scope="row " class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                1
+                            </th>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Lorem ipsum dolor sit amet. </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <a href="services.html" class="font-medium text-blue-600 hover:underline">Detail</a>
+                                <a href="edit-submission.html" class="font-medium text-green-600 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                2
+                            </th>
+                            <td class="text-gray-700 px-6 py-4">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, itaque.
+                            </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <a href="services.html" class="font-medium text-blue-600 hover:underline">Detail</a>
+                                <a href="edit-submission.html" class="font-medium text-green-600 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                3
+                            </th>
+                            <td class="text-gray-700 px-6 py-4">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, itaque.
+                            </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <a href="services.html" class="font-medium text-blue-600 hover:underline">Detail</a>
+                                <a href="edit-submission.html" class="font-medium text-green-600 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                4
+                            </th>
+                            <td class="text-gray-700 px-6 py-4">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, itaque.
+                            </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <a href="services.html" class="font-medium text-blue-600 hover:underline">Detail</a>
+                                <a href="edit-submission.html" class="font-medium text-green-600 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-center items-center py-10">
+                <nav aria-label="Page navigation example">
+                    <ul class="inline-flex -space-x-px">
+                        <li>
+                            <a href="#" class="btn-pagination ml-0 rounded-l-lg">Previous</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-current="page" class="btn-pagination-current">1</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">2</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">3</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">4</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">5</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination rounded-r-lg">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

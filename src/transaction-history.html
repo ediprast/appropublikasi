@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Propublikasi - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="/src/css/style.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-montserrat font-medium" x-data="{dropDownOpen: false, scrolledFromTop: false}" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+
+    <!-- Header  -->
+    <header class="fixed w-full flex justify-between items-center z-10 px-4 md:px-12 h-20 bg-white transition-all duration-500" :class="{'h-20': !scrolledFromTop, 'h-16 shadow-sm': scrolledFromTop}">
+        <a href="index.html">
+            <span class="font-poppins text-lg transform origin-left transition duration-500" :class="{'scale-100': !scrolledFromTop, 'scale-75': scrolledFromTop}">AP Propublikasi</span>
+        </a>
+
+        <div class="flex justify-center items-center gap-3">
+            <span>John Doe</span>
+            <div class="relative">
+                <button @click="dropDownOpen = !dropDownOpen" class="block h-9 w-9 rounded-full overflow-hidden border-[1px] border-red-200 shadow-sm"><img class="h-full w-full object-cover" src="https://source.unsplash.com/600x400?man" alt="user image" /></button>
+
+                <!-- Dropdown menu -->
+                <div class="absolute right-0 top-full z-10 w-44 py-2" :class="{'hidden': !dropDownOpen, 'visible': dropDownOpen}">
+                    <div class="bg-white rounded divide-y divide-gray-100 shadow">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li>
+                                <a href="profile.html" class="block py-2 px-4 hover:bg-gray-100">Profile</a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="block py-2 px-4 hover:bg-gray-100">Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gray-100 ">
+        <div class="container h-screen lg:w-full py-20 lg:relative lg:h-[28rem] lg:mb-40 ">
+            <div class="flex justify-start py-10 ">
+                <h2 class="text-2xl font-poppins flex justify-center items-center">
+                    <a href="dashboard.html" class="text-4xl flex items-center justify-center"><i class='bx bx-chevron-left'></i></a>
+                    <span>Riwayat Transaksi</span></h2>
+            </div>
+
+            <div class="relative overflow-x-auto font-poppins shadow-sm sm:rounded-lg ">
+                <table class="w-full text-sm text-left text-gray-200 ">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                        <tr>
+                            <th scope="col " class="px-6 py-4 ">
+                                No.
+                            </th>
+                            <th scope="col " class="px-6 py-4 ">
+                                ID
+                            </th>
+                            <th scope="col " class="px-6 py-4 ">
+                                Judul
+                            </th>
+                            <th scope="col " class="px-6 py-4 ">
+                                Layanan
+                            </th>
+                            <th scope="col " class="px-6 py-4 ">
+                                Aksi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b ">
+                            <th scope="row " class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                1
+                            </th>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                SUB-1 </td>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Lorem ipsum dolor sit amet. </td>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Translate, Proofreading </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <button class="font-medium text-blue-600 hover:underline" type="button" data-modal-toggle="detailTransactionModal">
+                                    Detail
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b ">
+                            <th scope="row " class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                1
+                            </th>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                SUB-1 </td>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Lorem ipsum dolor sit amet. </td>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Translate, Proofreading </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <button class="font-medium text-blue-600 hover:underline" type="button" data-modal-toggle="detailTransactionModal">
+                                    Detail
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b ">
+                            <th scope="row " class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                1
+                            </th>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                SUB-1 </td>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Lorem ipsum dolor sit amet. </td>
+                            <td class="text-gray-700 px-6 py-4 ">
+                                Translate, Proofreading </td>
+                            <td class="px-6 py-4 flex flex-col md:flex-row gap-4">
+                                <button class="font-medium text-blue-600 hover:underline" type="button" data-modal-toggle="detailTransactionModal">
+                                    Detail
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-center items-center py-10">
+                <nav aria-label="Page navigation example">
+                    <ul class="inline-flex -space-x-px">
+                        <li>
+                            <a href="#" class="btn-pagination ml-0 rounded-l-lg">Previous</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-current="page" class="btn-pagination-current">1</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">2</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">3</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">4</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination">5</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-pagination rounded-r-lg">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- modal -->
+            <div id="detailTransactionModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow">
+                        <!-- Modal header -->
+                        <div class="flex justify-between items-start p-5 rounded-t border-b">
+                            <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl">
+                                Detail Transaksi
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="detailTransactionModal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-6">
+                            <div class="relative overflow-x-auto mb-6">
+                                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                    <tbody>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                ID Transaksi
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                SUB-1
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Tanggal Transaksi
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                30, Juni 2022 09:30
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Judul
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Ini adalah judul
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Layanan
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Translate, Proofreading
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Status
+                                            </th>
+                                            <td class="px-6 py-4 text-green-400 uppercase">
+                                                Success
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-500 uppercase whitespace-nowrap">
+                                                Perhitungan Biaya
+                                            </th>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Translate
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Rp 300.000
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Proofreading
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Rp 500.000
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Biaya Admin
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                Rp 2.500
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white border-b">
+                                            <th scope="row" class="py-4 text-xs text-gray-700 uppercase whitespace-nowrap">
+                                                Total Biaya
+                                            </th>
+                                            <td class="px-6 py-4 text-red-400 uppercase">
+                                                Rp 802.500
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
+                            <button data-modal-toggle="detailTransactionModal" type="button" class="btn-blue text-sm text-center">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/mixitup.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
