@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href="src/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -30,7 +30,7 @@
             </button>
             <ul class="fixed font-poppins items-center left-0 right-0 min-h-screen bg-white text-gray-800 space-y-4 p-4 transform translate-x-full transition-all duration-500 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0" :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen}">
                 <li>
-                    <a href="#" class="active hover:text-red-400">Home</a>
+                    <a href="#" class="active-nav hover:text-red-400">Home</a>
                 </li>
                 <li>
                     <a href="#" class="hover:text-red-400">About</a>
@@ -71,12 +71,12 @@
             </div>
 
             <div class="md:px-14 lg:px-36 text-gray-500 grid grid-rows-3 md:grid-rows-none md:grid-cols-6 grid-flow-col text-center gap-1 mb-8 md:mb-12">
-                <span class="service-item service-active" data-filter=".asistensi">Asistensi Publikasi</span>
-                <span class="service-item" data-filter=".cover">Making Cover</span>
-                <span class="service-item" data-filter=".layouting">Layouting</span>
-                <span class="service-item" data-filter=".proofreading">Proofreading</span>
-                <span class="service-item" data-filter=".translate">Translate</span>
-                <span class="service-item" data-filter=".cipta">Pendaftaran Hak Cipta</span>
+                <span class="service-item active-service-item cursor-pointer py-3" data-filter=".asistensi">Asistensi Publikasi</span>
+                <span class="service-item cursor-pointer py-3" data-filter=".cover">Making Cover</span>
+                <span class="service-item cursor-pointer py-3" data-filter=".layouting">Layouting</span>
+                <span class="service-item cursor-pointer py-3" data-filter=".proofreading">Proofreading</span>
+                <span class="service-item cursor-pointer py-3" data-filter=".translate">Translate</span>
+                <span class="service-item cursor-pointer py-3" data-filter=".cipta">Pendaftaran Hak Cipta</span>
             </div>
 
             <div class="container service-container text-center mb-4 md:mb-8">
@@ -124,35 +124,35 @@
             <h2 class="mb-8 text-2xl text-center text-gray-800 font-semibold md:text-3xl">Klien Kami</h2>
 
             <div class="lg:absolute px-10 grid grid-rows-3 lg:grid-rows-none lg:grid-cols-3 grid-flow-col text-center gap-12">
-                <div class="card">
-                    <div class="relative w-32 h-32 mb-4">
+                <div class="testimonial-card">
+                    <div class="relative w-32 h-32 mb-6">
                         <img class="h-full w-full rounded-full object-cover border border-gray-500 shadow-sm" src="https://source.unsplash.com/600x400?man" alt="user image" />
                     </div>
                     <div>
                         <h3 class="font-semibold mb-4">Gusanto</h3>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime esse quo quaerat quia ab.</p>
+                        <p class="mb-4 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime esse quo quaerat quia ab.</p>
                         <hr class="mb-4">
                         <span>Proofread Journal</span>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="relative w-32 h-32 mb-4">
+                <div class="testimonial-card">
+                    <div class="relative w-32 h-32 mb-6">
                         <img class="h-full w-full rounded-full object-cover border border-gray-500 shadow-sm" src="https://source.unsplash.com/600x400?grandfather" alt="user image" />
                     </div>
                     <div>
                         <h3 class="font-semibold mb-4">Gusanto</h3>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime esse quo quaerat quia ab.</p>
+                        <p class="mb-4 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime esse quo quaerat quia ab.</p>
                         <hr class="mb-4">
                         <span>Proofread Journal</span>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="relative w-32 h-32 mb-4">
+                <div class="testimonial-card">
+                    <div class="relative w-32 h-32 mb-6">
                         <img class="h-full w-full rounded-full object-cover border border-gray-500 shadow-sm" src="https://source.unsplash.com/600x400?kid" alt="user image" />
                     </div>
                     <div>
                         <h3 class="font-semibold mb-4">Gusanto</h3>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime esse quo quaerat quia ab.</p>
+                        <p class="mb-4 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime esse quo quaerat quia ab.</p>
                         <hr class="mb-4">
                         <span>Proofread Journal</span>
                     </div>
@@ -231,9 +231,9 @@
 
     </footer>
 
-    <script src="js/mixitup.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/mixitup.min.js "></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js "></script>
+    <script src="js/main.js "></script>
 </body>
 
 </html>

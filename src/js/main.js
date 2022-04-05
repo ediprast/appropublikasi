@@ -15,8 +15,8 @@ let mixer = mixitup('.service-container', {
 const linkService = document.querySelectorAll('.service-item')
 
 function activeService() {
-    linkService.forEach(l => l.classList.remove('service-active'))
-    this.classList.add('service-active')
+    linkService.forEach(l => l.classList.remove('active-service-item'))
+    this.classList.add('active-service-item')
 }
 
 linkService.forEach(l => l.addEventListener('click', activeService))
